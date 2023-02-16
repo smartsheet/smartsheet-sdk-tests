@@ -9,14 +9,14 @@ Mock test suite for all language SDKs
 * Java 7+
 
 ## Overview
-This repository provides a number of scripts that can be used to bundle a WireMock server with Smartsheet scenario configuration files. It also contains scripts that can be used by Travis builds to install and run a WireMock server bundle.
+This repository provides a number of scripts that can be used to bundle a WireMock server with Smartsheet scenario configuration files. It also contains scripts that can be used by Github Actions to install and run a WireMock server bundle.
 
 ## Contents
 * [Running the Test Server](#running-the-test-server)
 * [Creating Scenarios](#creating-scenarios)
 * [Bundling Packages](#bundling-packages)
 * [Releasing a Package](#releasing-a-package)
-* [Using with Travis CI](#using-with-travis-ci)
+* [Using with GitHub Actions](#using-with-github-actions)
 
 ## Running the Test Server
 To run the test server, navigate to the `sdk_tests_package` and run the provided launch script:
@@ -28,7 +28,7 @@ $ ./launch.sh
 
 Once the server is running, you can run the mock API tests for your SDK. See the SDK's documentation for more information.
 
-You can check which scenarios are included in the package by referencing the package's [README](https://github.com/smartsheet-platform/smartsheet-sdk-tests/blob/master/sdk_tests_package/README.md). This README includes information on how to run the server as well as descriptions of each scenario.
+You can check which scenarios are included in the package by referencing the package's [README](https://github.com/smartsheet/smartsheet-sdk-tests/blob/master/sdk_tests_package/README.md). This README includes information on how to run the server as well as descriptions of each scenario.
 
 ## Creating Scenarios
 Scenarios can either be written by hand following the [scenario spec](#scenario-specification) or by [converting a Postman collections export file](#converting-postman-export-files). In order to use the new scenarios, the scenario file(s) must be added to the `data/scenarios` directory and the package must be rebundled - see [bundling packages](#bundling-packages).
@@ -104,7 +104,7 @@ $ node convert_from_postman.js --collection=path/to/collection.json --output=my_
 Once the scenario file has been converted, you should verify that the scenarios look as expected. Make sure every request has a response, no Postman variables appear in the request, and all the data has been sanitized.
 
 ## Bundling Packages
-Building a package requires the `diff-extension.jar`. By default, the packaging script will use the `jar` included in the bundle. (`sdk_tests_package/libs/diff-extension.jar`) Alternately, you can build the `jar` by following these [build instructions](https://github.com/smartsheet-platform/smartsheet-sdk-tests/blob/master/wiremock/smartsheet-diff-extension/README.md).
+Building a package requires the `diff-extension.jar`. By default, the packaging script will use the `jar` included in the bundle. (`sdk_tests_package/libs/diff-extension.jar`) Alternately, you can build the `jar` by following these [build instructions](https://github.com/smartsheet/smartsheet-sdk-tests/blob/master/wiremock/smartsheet-diff-extension/README.md).
 
 To bundle a package, run the following in a bash terminal:
 
@@ -120,32 +120,22 @@ $ sh package.sh wiremock/smartsheet-diff-extension/build/libs/diff-extension-<VE
 When called successfully, the new package will be created in `sdk_tests_package/` in the current directory. The package will include an auto generated `README.md` describing scenarios available to write SDK tests against. See [running the test server](#running-the-test-server) for information on how to start the new server.
 
 ## Releasing a Package
-To release a package, commit your newly generated package and merge it into `master`. Once your commit has been merged, all Travis builds will use it for mock API tests. Note that adding a new package will not trigger a Travis build of the SDKs so it is a good idea to rerun the most recent Travis build for each SDK to verify that the tests pass.
+To release a package, commit your newly generated package and merge it into `master`. Once your commit has been merged, all Github Actions (in each SDK repository) will use it for mock API tests. Note that adding a new package will not trigger the Github Actions of the SDKs so it is a good idea to rerun the most recent Test Action for each SDK to verify that the tests pass.
 
-## Using with Travis CI
-Travis can use this package to run the Smartsheet WireMock mock API server. This package contains two scripts to use with Travis: an install script and a start script. The install script copies the package into the current directory. The start script starts WireMock in the background and waits for WireMock to warm-up.
+## Using with GitHub Actions
+GitHub Actions can use this package to run the Smartsheet WireMock mock API server. This package contains two scripts: an install script and a start script. The install script copies the package into the current directory. The start script starts WireMock in the background and waits for WireMock to warm-up.
 
 ### Configuring SDKs to Run the Mock API
-Add the following to your SDK's `.travis.yml` configuration file to run the WireMock server:
+Add the following to your SDK's GitHub Action configuration file (`under .github/workflows directory at the root of the repository`) to run the WireMock server:
 
 ```yaml
-before_install:
-  - git clone https://github.com/smartsheet-platform/smartsheet-sdk-tests.git
-  - smartsheet-sdk-tests/travis_scripts/install_wiremock.sh
-
-script:
-  - smartsheet-sdk-tests/travis_scripts/start_wiremock.sh
-  # run SDK specific functional and mock API tests
-```
-
-For example, the Node SDK's `.travis.yml` configuration is:
-
-```yaml
-before_install:
-  - git clone https://github.com/smartsheet-platform/smartsheet-sdk-tests.git
-  - smartsheet-sdk-tests/travis_scripts/install_wiremock.sh
-
-script:
-  - smartsheet-sdk-tests/travis_scripts/start_wiremock.sh
-  - npm test
+- name: Clone smartsheet/smartsheet-sdk-tests PUBLIC repository
+  uses: GuillaumeFalourd/clone-github-repo-action@v2
+  with:
+    owner: 'smartsheet'
+    repository: 'smartsheet-sdk-tests'
+- name: Setup mock API
+  run: |
+    smartsheet-sdk-tests/ci_scripts/install_wiremock.sh
+    smartsheet-sdk-tests/ci_scripts/start_wiremock.sh
 ```
