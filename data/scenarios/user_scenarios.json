@@ -1,0 +1,41 @@
+[
+  
+  {
+    "scenario": "Deactivate user",
+    "description": "Deactivates a user in an organization account.",
+    "request": {
+      "method": "POST",
+      "urlPath": "/users/2/deactivate",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "message": "SUCCESS",
+        "resultCode": 0
+      }
+    }
+  },
+  {
+    "scenario": "Reactivate user",
+    "description": "Reactivates a user in an organization account.",
+    "request": {
+      "method": "POST",
+      "urlPath": "/users/2/reactivate",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "response": {
+      "statusMessage": "OK",
+      "status": 200,
+      "jsonBody": {
+        "message": "SUCCESS",
+        "resultCode": 0
+      }
+    }
+  }
+]

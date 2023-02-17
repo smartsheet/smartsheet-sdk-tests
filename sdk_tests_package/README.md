@@ -100,6 +100,8 @@ The scenarios listed in the scenario section below can be called as specified. F
 * [Set Sight Publish Status](#set-sight-publish-status)
 * [Get Sight Publish Status](#get-sight-publish-status)
 * [Delete Sight](#delete-sight)
+* [Deactivate user](#deactivate-user)
+* [Reactivate user](#reactivate-user)
 
 ## List Automation Rules
 
@@ -6382,6 +6384,52 @@ Creates a new sheet without providing column details. Returns a bad request fail
 ### Expected Request
 
 #### DELETE - /sights/700
+
+### Response
+
+#### Status - 200 OK
+
+```json
+{
+  "message": "SUCCESS",
+  "resultCode": 0
+}
+```
+
+## Deactivate user
+
+Deactivates a user in an organization account.
+
+### Expected Request
+
+#### POST - /users/2/deactivate
+
+#### Headers
+
+* Content-Type: application/json
+
+### Response
+
+#### Status - 200 OK
+
+```json
+{
+  "message": "SUCCESS",
+  "resultCode": 0
+}
+```
+
+## Reactivate user
+
+Reactivates a user in an organization account.
+
+### Expected Request
+
+#### POST - /users/2/reactivate
+
+#### Headers
+
+* Content-Type: application/json
 
 ### Response
 
