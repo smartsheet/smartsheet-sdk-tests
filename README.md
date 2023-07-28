@@ -13,6 +13,7 @@ This repository provides a number of scripts that can be used to bundle a WireMo
 
 ## Contents
 * [Running the Test Server](#running-the-test-server)
+* [Running Tests Locally](#running-the-tests-locally)
 * [Creating Scenarios](#creating-scenarios)
 * [Bundling Packages](#bundling-packages)
 * [Releasing a Package](#releasing-a-package)
@@ -29,6 +30,34 @@ $ ./launch.sh
 Once the server is running, you can run the mock API tests for your SDK. See the SDK's documentation for more information.
 
 You can check which scenarios are included in the package by referencing the package's [README](https://github.com/smartsheet/smartsheet-sdk-tests/blob/master/sdk_tests_package/README.md). This README includes information on how to run the server as well as descriptions of each scenario.
+
+## Running Tests Locally
+To run the tests locally you need to just set up a few scripts that start wiremock and then run the tests.
+
+### Example start wire mock shell script locally.
+```bash
+#!/usr/bin/env sh
+#This is just the install and start wiremock scripts combined. 
+set -e
+WIREMOCK_PACKAGE="./sdk_tests_package" #or path to sdk_tests_package directory
+cp -r "$WIREMOCK_PACKAGE" .
+WIREMOCK_PACKAGE_DIR='sdk_tests_package'
+
+# run wiremock
+(cd $WIREMOCK_PACKAGE_DIR; ./launch.sh &)
+
+# wait for wiremock to start
+sleep 10
+```
+
+### Run the tests locally.
+```bash
+#!/bin/bash
+
+cd ../smartsheet-csharp-sdk/mock-api-test-sdk-net60/
+dotnet build --configuration Release --no-restore
+dotnet test --no-restore
+```
 
 ## Creating Scenarios
 Scenarios can either be written by hand following the [scenario spec](#scenario-specification) or by [converting a Postman collections export file](#converting-postman-export-files). In order to use the new scenarios, the scenario file(s) must be added to the `data/scenarios` directory and the package must be rebundled - see [bundling packages](#bundling-packages).
