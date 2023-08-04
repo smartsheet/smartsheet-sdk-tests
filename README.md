@@ -13,7 +13,7 @@ This repository provides a number of scripts that can be used to bundle a WireMo
 
 ## Contents
 * [Running the Test Server](#running-the-test-server)
-* [Running Tests Locally](#running-the-tests-locally)
+* [Running Tests Locally](#running-tests-locally)
 * [Creating Scenarios](#creating-scenarios)
 * [Bundling Packages](#bundling-packages)
 * [Releasing a Package](#releasing-a-package)
@@ -50,7 +50,7 @@ WIREMOCK_PACKAGE_DIR='sdk_tests_package'
 sleep 10
 ```
 
-### Run the tests locally.
+### Running Tests Locally
 ```bash
 #!/bin/bash
 
