@@ -55,6 +55,7 @@ sleep 10
 #!/bin/bash
 
 cd ../smartsheet-csharp-sdk/mock-api-test-sdk-net60/
+dotnet restore
 dotnet build --configuration Release --no-restore
 dotnet test --no-restore
 ```
