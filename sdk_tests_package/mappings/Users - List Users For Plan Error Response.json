@@ -7,7 +7,7 @@
         "equalTo": "Bearer test_token_123"
       },
       "x-test-name": {
-        "equalTo": "/users/list-users-for-plan/error-response"
+        "equalTo": "/users/list-users-for-plan/internal-server-error"
       },
       "x-request-id": {
         "matches" : ".*"
@@ -20,11 +20,11 @@
     }
   },
   "response": {
-    "statusMessage": "Unauthorized",
-    "status": 401,
+    "statusMessage": "Internal Server Error",
+    "status": 500,
     "jsonBody": {
-      "errorCode": 1008,
-      "message": "Your Access Token is invalid."
+      "errorCode": 4000,
+      "message": "Internal Server Error"
     },
     "headers": {
       "Content-Type": "application/json"
