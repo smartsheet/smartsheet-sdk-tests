@@ -1,0 +1,10 @@
+services:
+  wiremock:
+    image: wiremock/wiremock:2.35.0
+    container_name: wiremock
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./sdk_tests_package/mappings:/home/wiremock/mappings:ro
+    command: >
+      --global-response-templating

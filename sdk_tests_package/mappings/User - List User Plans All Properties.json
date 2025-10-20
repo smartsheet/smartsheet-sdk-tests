@@ -1,0 +1,46 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/users/[0-9]+/plans",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer test_token_123"
+      },
+      "smartsheet-integration-source": {
+        "equalTo": "AI,SampleOrg,My-AI-Connector-v2"
+      },
+      "x-test-name": {
+        "equalTo": "/users/list-user-plans-all-properties"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    },
+    "queryParameters": {
+      "maxItems": {
+        "equalTo": "100"
+      },
+      "lastKey": {
+        "equalTo": "abcDefGhIjKlMnOpQrStUvWxYz"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "lastKey": "12345678901234569",
+      "data": [
+        {
+          "planId": 1234567890123456,
+          "seatType": "MEMBER",
+          "seatTypeLastChangedAt": "2025-01-01T00:00:00.123456789Z",
+          "isInternal": false
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
