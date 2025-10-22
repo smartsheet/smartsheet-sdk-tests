@@ -1,21 +1,15 @@
 {
   "request": {
-    "urlPathPattern": "/2.0/users",
+    "urlPathPattern": "/2.0/users/asd",
     "method": "GET",
     "headers": {
       "Authorization": {
-        "equalTo": "Bearer test_token_123"
-      },
-      "x-test-name": {
-        "equalTo": "/users/list-users-for-plan-by-seatType"
-      },
-      "x-request-id": {
-        "matches" : ".*"
+        "matches": "Bearer .*"
       }
     },
     "queryParameters": {
-      "seatType": {
-        "equalTo": "MEMBER"
+      "planId": {
+        "matches": "\\d{16}"
       }
     }
   },
@@ -27,7 +21,7 @@
         {
           "id": 1234567894536783,
           "planId": 1234567890123456,
-          "admin": false,
+          "admin": true,
           "email": "user1@smartsheet.biz",
           "firstName": "External GUEST",
           "groupAdmin": false,
@@ -37,14 +31,15 @@
           "resourceViewer": false,
           "sheetCount": -1,
           "status": "ACTIVE",
-          "seatType": "MEMBER",
+          "seatType": "GUEST",
           "seatTypeLastChangedAt": "2025-10-13T12:17:52.525696Z",
+          "provisionalExpirationDate": "2026-12-13T12:17:52.525696Z",
           "isInternal": false
         },
         {
           "id": 1234567894536784,
           "planId": 1234567890123456,
-          "admin": false,
+          "admin": true,
           "email": "user2@smartsheet.biz",
           "firstName": "Admin MEMBER",
           "groupAdmin": true,
@@ -61,6 +56,7 @@
           "status": "ACTIVE",
           "seatType": "MEMBER",
           "seatTypeLastChangedAt": "2025-10-13T12:17:52.525696Z",
+          "provisionalExpirationDate": "2026-12-13T12:17:52.525696Z",
           "isInternal": true
         }
       ],

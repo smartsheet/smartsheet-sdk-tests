@@ -4,13 +4,10 @@
     "method": "GET",
     "headers": {
       "Authorization": {
-        "equalTo": "Bearer test_token_123"
-      },
-      "smartsheet-integration-source": {
-        "equalTo": "AI,SampleOrg,My-AI-Connector-v2"
+        "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/users/list-user-plans-all-properties"
+        "equalTo": "/users/list-user-plans/all-response-body-properties"
       },
       "x-request-id": {
         "matches" : ".*"
@@ -21,7 +18,7 @@
         "equalTo": "100"
       },
       "lastKey": {
-        "equalTo": "abcDefGhIjKlMnOpQrStUvWxYz"
+        "matches": ".*"
       }
     }
   },

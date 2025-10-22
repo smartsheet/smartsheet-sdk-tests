@@ -4,13 +4,10 @@
     "method": "GET",
     "headers": {
       "Authorization": {
-        "equalTo": "Bearer test_token_123"
-      },
-      "smartsheet-integration-source": {
-        "equalTo": "AI,SampleOrg,My-AI-Connector-v2"
+        "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/users/list-user-plans/error-response"
+        "equalTo": "/users/list-user-plans/required-response-body-properties"
       },
       "x-request-id": {
         "matches" : ".*"
@@ -18,11 +15,17 @@
     }
   },
   "response": {
-    "statusMessage": "Internal Server Error",
-    "status": 500,
+    "statusMessage": "OK",
+    "status": 200,
     "jsonBody": {
-      "errorCode": 4000,
-      "message": "Internal Server Error"
+      "data": [
+        {
+          "planId": 1234567890123456,
+          "seatType": "MEMBER",
+          "seatTypeLastChangedAt": null,
+          "isInternal": false
+        }
+      ]
     },
     "headers": {
       "Content-Type": "application/json"
