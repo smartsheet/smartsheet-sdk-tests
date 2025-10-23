@@ -31,7 +31,6 @@
           "name": "Test User",
           "resourceViewer": true,
           "seatType": "MEMBER",
-          "seatTypeLastChangedAt": null,
           "sheetCount": -1,
           "status": "ACTIVE"
         }

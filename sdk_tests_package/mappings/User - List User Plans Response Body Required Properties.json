@@ -22,7 +22,6 @@
         {
           "planId": 1234567890123456,
           "seatType": "MEMBER",
-          "seatTypeLastChangedAt": null,
           "isInternal": false
         }
       ]
