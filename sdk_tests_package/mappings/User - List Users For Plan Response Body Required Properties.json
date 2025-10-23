@@ -12,11 +12,6 @@
       "x-request-id": {
         "matches" : ".*"
       }
-    },
-    "queryParameters": {
-      "planId": {
-        "matches": ".*"
-      }
     }
   },
   "response": {

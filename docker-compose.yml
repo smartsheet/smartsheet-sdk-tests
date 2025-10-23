@@ -1,6 +1,6 @@
 services:
   wiremock:
-    image: wiremock/wiremock:2.35.0
+    image: wiremock/wiremock:3x
     container_name: wiremock
     ports:
       - "127.0.0.1:8080:8080"

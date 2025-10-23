@@ -12,14 +12,6 @@
       "x-request-id": {
         "matches" : ".*"
       }
-    },
-    "queryParameters": {
-      "maxItems": {
-        "equalTo": "100"
-      },
-      "lastKey": {
-        "matches": ".*"
-      }
     }
   },
   "response": {
