@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/users/list-users-for-plan/required-response-body-properties"
+        "equalTo": "/users/list-users/required-response-body-properties"
       },
       "x-request-id": {
         "matches" : ".*"

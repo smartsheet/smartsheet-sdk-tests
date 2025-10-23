@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/users/error-400-response"
+        "equalTo": "/errors/400-response"
       },
       "x-request-id": {
         "matches" : ".*"
