@@ -1,0 +1,33 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/users/[0-9]+/plans",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/users/list-user-plans/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "planId": 1234567890123456,
+          "seatType": "MEMBER",
+          "isInternal": false
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
