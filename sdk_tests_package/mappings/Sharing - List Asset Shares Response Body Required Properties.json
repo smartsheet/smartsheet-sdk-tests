@@ -1,0 +1,37 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/shares",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/sharing/list-asset-shares/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "items": [
+        {
+          "id": "AAAMCmYGFOeE",
+          "email": "test.email@smartsheet.com",
+          "userId": 9876543210,
+          "groupId": 1234567890,
+          "type": "USER",
+          "accessLevel": "ADMIN",
+          "scope": "ITEM"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
