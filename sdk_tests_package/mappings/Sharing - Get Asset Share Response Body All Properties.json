@@ -20,8 +20,8 @@
     "jsonBody": {
       "id": "AAAMCmYGFOeE",
       "email": "test.email@smartsheet.com",
-      "userId": 9876543210,
-      "groupId": 1234567890,
+      "userId": "9876543210",
+      "groupId": "1234567890",
       "name": "Example Name",
       "type": "USER",
       "accessLevel": "ADMIN",
