@@ -35,7 +35,7 @@ Wiremock tests should not cover:
 
 ### Using Smartsheet's Public API Documentation
 
-Smartsheet's Publci API Documentation should be used to create Wiremock mappings. There are 2 useful resources there:
+Smartsheet's Public API Documentation should be used to create Wiremock mappings. There are 2 useful resources there:
 * A link to a concrete group of APIs (e.g. [Users](https://developers.smartsheet.com/api/smartsheet/openapi/users))
 * A link to [download the Open API specification](https://developers.smartsheet.com/_spec/api/smartsheet/openapi.json?download).
 
