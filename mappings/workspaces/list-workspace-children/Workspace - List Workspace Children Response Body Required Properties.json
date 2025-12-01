@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/workspaces/get-workspace-children/required-response-body-properties"
+        "equalTo": "/workspaces/list-workspace-children/required-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
