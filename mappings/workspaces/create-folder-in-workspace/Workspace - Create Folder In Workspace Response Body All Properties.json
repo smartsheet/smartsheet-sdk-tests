@@ -1,0 +1,33 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/workspaces/{workspaceId}/folders",
+    "method": "POST",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/workspaces/create-folder-in-workspace/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "result": {
+        "id": 3333333333333333,
+        "name": "New folder",
+        "permalink": "https://app.smartsheet.com/folders/3333333333333333"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

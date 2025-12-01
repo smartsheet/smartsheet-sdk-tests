@@ -1,0 +1,34 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/workspaces/{workspaceId}",
+    "method": "PUT",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/workspaces/update-workspace/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "result": {
+        "id": 7960873114331012,
+        "name": "Updated workspace",
+        "accessLevel": "OWNER",
+        "permalink": "https://app.smartsheet.com/workspaces/7960873114331012"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

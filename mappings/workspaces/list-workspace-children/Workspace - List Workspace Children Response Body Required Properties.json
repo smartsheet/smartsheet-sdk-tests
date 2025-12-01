@@ -1,0 +1,50 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/workspaces/{workspaceId}/children",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/workspaces/get-workspace-children/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 1234567890123456,
+          "name": "Project Sheet",
+          "type": "sheet",
+          "permalink": "https://app.smartsheet.com/sheets/1234567890123456",
+          "createdAt": "2024-01-15T10:30:00Z",
+          "modifiedAt": "2024-11-28T14:45:00Z"
+        },
+        {
+          "id": 9876543210987654,
+          "name": "Reports Folder",
+          "type": "folder",
+          "permalink": "https://app.smartsheet.com/folders/9876543210987654"
+        },
+        {
+          "id": 5555555555555555,
+          "name": "Dashboard",
+          "type": "sight",
+          "permalink": "https://app.smartsheet.com/dashboards/5555555555555555",
+          "createdAt": "2024-02-20T08:15:00Z",
+          "modifiedAt": "2024-11-25T16:30:00Z"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

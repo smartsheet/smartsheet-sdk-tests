@@ -1,0 +1,45 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/workspaces",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/workspaces/list-workspaces/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "pageNumber": 1,
+      "pageSize": 100,
+      "totalPages": 1,
+      "totalCount": 2,
+      "lastKey": "abcDefGhIjKlMnOpQrStUvWxYz",
+      "data": [
+        {
+          "id": 7960873114331012,
+          "name": "Project Workspace",
+          "accessLevel": "OWNER",
+          "permalink": "https://app.smartsheet.com/workspaces/7960873114331012"
+        },
+        {
+          "id": 1234567890123456,
+          "name": "Marketing Workspace",
+          "accessLevel": "ADMIN",
+          "permalink": "https://app.smartsheet.com/workspaces/1234567890123456"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
