@@ -1,0 +1,81 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/search/sheets/{sheetId}",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/search/search-sheet/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "results": [
+        {
+          "contextData": [
+            "Cell data: Project milestone completed"
+          ],
+          "favorite": false,
+          "objectId": 7890123456789012,
+          "objectType": "row",
+          "parentObjectFavorite": true,
+          "parentObjectId": 1234567890123456,
+          "parentObjectName": "Project Sheet",
+          "parentObjectType": "sheet",
+          "text": "Row 5"
+        },
+        {
+          "contextData": [
+            "Cell data: Task assigned to John"
+          ],
+          "favorite": false,
+          "objectId": 7890123456789013,
+          "objectType": "row",
+          "parentObjectFavorite": true,
+          "parentObjectId": 1234567890123456,
+          "parentObjectName": "Project Sheet",
+          "parentObjectType": "sheet",
+          "text": "Row 12"
+        },
+        {
+          "contextData": [
+            "Comment: Great progress on the project!"
+          ],
+          "favorite": true,
+          "objectId": 8901234567890123,
+          "objectType": "discussion",
+          "parentObjectFavorite": true,
+          "parentObjectId": 1234567890123456,
+          "parentObjectName": "Project Sheet",
+          "parentObjectType": "sheet",
+          "text": "Comment on Row 5"
+        },
+        {
+          "contextData": [
+            "Attachment: project-plan.pdf"
+          ],
+          "favorite": false,
+          "objectId": 9012345678901234,
+          "objectType": "attachment",
+          "parentObjectFavorite": true,
+          "parentObjectId": 1234567890123456,
+          "parentObjectName": "Project Sheet",
+          "parentObjectType": "sheet",
+          "text": "project-plan.pdf"
+        }
+      ],
+      "totalCount": 4
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

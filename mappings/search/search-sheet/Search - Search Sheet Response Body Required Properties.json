@@ -1,0 +1,45 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/search/sheets/{sheetId}",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/search/search-sheet/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "results": [
+        {
+          "contextData": [
+            "Cell data: Project milestone completed"
+          ],
+          "objectId": 7890123456789012,
+          "objectType": "row",
+          "text": "Row 5"
+        },
+        {
+          "contextData": [
+            "Cell data: Task assigned to John"
+          ],
+          "objectId": 7890123456789013,
+          "objectType": "row",
+          "text": "Row 12"
+        }
+      ],
+      "totalCount": 2
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

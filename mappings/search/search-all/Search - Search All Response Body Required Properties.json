@@ -1,0 +1,45 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/search",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/search/search-all/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "results": [
+        {
+          "contextData": [
+            "Sample context data"
+          ],
+          "objectId": 1234567890123456,
+          "objectType": "sheet",
+          "text": "Sample Sheet Name"
+        },
+        {
+          "contextData": [
+            "Sample folder context"
+          ],
+          "objectId": 2345678901234567,
+          "objectType": "folder",
+          "text": "Sample Folder Name"
+        }
+      ],
+      "totalCount": 2
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
