@@ -1,0 +1,28 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}",
+    "method": "DELETE",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/delete-report/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
