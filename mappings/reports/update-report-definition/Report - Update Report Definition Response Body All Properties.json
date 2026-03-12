@@ -19,7 +19,57 @@
     "status": 200,
     "jsonBody": {
       "message": "SUCCESS",
-      "resultCode": 0
+      "resultCode": 0,
+      "result": {
+        "filters": {
+          "operator": "AND",
+          "criteria": [
+            {
+              "column": {
+                "title": "Primary Column",
+                "type": "TEXT_NUMBER",
+                "primary": true
+              },
+              "operator": "EQUAL",
+              "values": [
+                "Test"
+              ]
+            }
+          ]
+        },
+        "groupingCriteria": [
+          {
+            "column": {
+              "title": "Primary Column",
+              "type": "TEXT_NUMBER",
+              "primary": true
+            },
+            "sortingDirection": "ASCENDING",
+            "isExpanded": true
+          }
+        ],
+        "aggregationCriteria": [
+          {
+            "column": {
+              "title": "Primary Column",
+              "type": "TEXT_NUMBER",
+              "primary": true
+            },
+            "aggregationType": "COUNT",
+            "isExpanded": true
+          }
+        ],
+        "sortingCriteria": [
+          {
+            "column": {
+              "title": "Primary Column",
+              "type": "TEXT_NUMBER",
+              "primary": true
+            },
+            "sortingDirection": "ASCENDING"
+          }
+        ]
+      }
     },
     "headers": {
       "Content-Type": "application/json"
