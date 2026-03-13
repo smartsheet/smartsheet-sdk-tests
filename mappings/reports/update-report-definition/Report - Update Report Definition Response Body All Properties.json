@@ -48,17 +48,6 @@
             "isExpanded": true
           }
         ],
-        "aggregationCriteria": [
-          {
-            "column": {
-              "title": "Primary Column",
-              "type": "TEXT_NUMBER",
-              "primary": true
-            },
-            "aggregationType": "COUNT",
-            "isExpanded": true
-          }
-        ],
         "sortingCriteria": [
           {
             "column": {
@@ -67,6 +56,17 @@
               "primary": true
             },
             "sortingDirection": "ASCENDING"
+          }
+        ],
+        "summarizingCriteria": [
+          {
+            "column": {
+              "title": "Primary Column",
+              "type": "TEXT_NUMBER",
+              "primary": true
+            },
+            "aggregationType": "COUNT",
+            "isExpanded": true
           }
         ]
       }
