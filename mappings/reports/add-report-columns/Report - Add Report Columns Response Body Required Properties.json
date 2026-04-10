@@ -15,18 +15,7 @@
       "Content-Type": {
         "equalTo": "application/json"
       }
-    },
-    "bodyPatterns": [
-      {
-        "matchesJsonPath": "$[0].title"
-      },
-      {
-        "matchesJsonPath": "$[0].type"
-      },
-      {
-        "matchesJsonPath": "$[0].index"
-      }
-    ]
+    }
   },
   "response": {
     "statusMessage": "OK",
