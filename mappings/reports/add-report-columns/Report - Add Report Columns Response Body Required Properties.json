@@ -1,0 +1,56 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}/columns",
+    "method": "POST",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/add-report-columns/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      },
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[0].title"
+      },
+      {
+        "matchesJsonPath": "$[0].type"
+      },
+      {
+        "matchesJsonPath": "$[0].index"
+      }
+    ]
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "result": [
+        {
+          "virtualId": 12345,
+          "index": 4,
+          "title": "Item selected",
+          "type": "CHECKBOX"
+        },
+        {
+          "virtualId": 12346,
+          "index": 5,
+          "title": "Sheet name",
+          "type": "TEXT_NUMBER"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
