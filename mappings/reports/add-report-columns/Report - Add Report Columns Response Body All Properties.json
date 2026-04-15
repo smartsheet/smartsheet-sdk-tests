@@ -31,18 +31,58 @@
           "type": "CHECKBOX",
           "hidden": false,
           "version": 0,
-          "width": 150
+          "width": 150,
+          "validation": false
         },
         {
           "virtualId": 12346,
           "index": 5,
           "title": "Sheet name",
           "type": "TEXT_NUMBER",
-          "systemColumnType": "SHEET_NAME",
           "hidden": false,
           "version": 0,
           "width": 150,
-          "sheetNameColumn": true
+          "sheetNameColumn": true,
+          "validation": false
+        },
+        {
+          "virtualId": 12347,
+          "index": 6,
+          "title": "Created By",
+          "type": "CONTACT_LIST",
+          "systemColumnType": "CREATED_BY",
+          "hidden": false,
+          "version": 0,
+          "width": 150,
+          "validation": false
+        },
+        {
+          "virtualId": 12348,
+          "index": 7,
+          "title": "Task Name",
+          "type": "TEXT_NUMBER",
+          "primary": true,
+          "hidden": false,
+          "version": 0,
+          "width": 200,
+          "validation": false
+        },
+        {
+          "virtualId": 12349,
+          "index": 8,
+          "title": "Row Number",
+          "type": "TEXT_NUMBER",
+          "systemColumnType": "AUTO_NUMBER",
+          "hidden": false,
+          "version": 0,
+          "width": 100,
+          "validation": false,
+          "autoNumberFormat": {
+            "fill": "000",
+            "prefix": "TASK-",
+            "startingNumber": 1,
+            "suffix": ""
+          }
         }
       ]
     },

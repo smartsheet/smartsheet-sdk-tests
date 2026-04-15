@@ -28,13 +28,46 @@
           "virtualId": 12345,
           "index": 4,
           "title": "Item selected",
-          "type": "CHECKBOX"
+          "type": "CHECKBOX",
+          "version": 0
         },
         {
           "virtualId": 12346,
           "index": 5,
           "title": "Sheet name",
-          "type": "TEXT_NUMBER"
+          "type": "TEXT_NUMBER",
+          "sheetNameColumn": true,
+          "version": 0
+        },
+        {
+          "virtualId": 12347,
+          "index": 6,
+          "title": "Created By",
+          "type": "CONTACT_LIST",
+          "systemColumnType": "CREATED_BY",
+          "version": 0
+        },
+        {
+          "virtualId": 12348,
+          "index": 7,
+          "title": "Task Name",
+          "type": "TEXT_NUMBER",
+          "primary": true,
+          "version": 0
+        },
+        {
+          "virtualId": 12349,
+          "index": 8,
+          "title": "Row Number",
+          "type": "TEXT_NUMBER",
+          "systemColumnType": "AUTO_NUMBER",
+          "version": 0,
+          "autoNumberFormat": {
+            "fill": "000",
+            "prefix": "TASK-",
+            "startingNumber": 1,
+            "suffix": ""
+          }
         }
       ]
     },
