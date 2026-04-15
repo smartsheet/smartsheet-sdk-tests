@@ -1,0 +1,46 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/users",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/users/list-users/contributor-seat-type-filter"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 125,
+          "planId": 125,
+          "admin": false,
+          "email": "user3@example.com",
+          "groupAdmin": false,
+          "isInternal": true,
+          "licensedSheetCreator": false,
+          "resourceViewer": false,
+          "seatType": "CONTRIBUTOR",
+          "seatTypeLastChangedAt": "2025-10-15T08:22:13.456789Z",
+          "sheetCount": 5,
+          "status": "ACTIVE"
+        }
+      ],
+      "pageNumber": 1,
+      "pageSize": 100,
+      "totalPages": 1,
+      "totalCount": 1
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
