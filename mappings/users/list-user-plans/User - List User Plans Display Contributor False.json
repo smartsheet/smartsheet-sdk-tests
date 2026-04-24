@@ -4,7 +4,7 @@
     "method": "GET",
     "queryParameters": {
       "displayContributorSeatType": {
-        "equalTo": "False"
+        "equalTo": "false"
       }
     },
     "headers": {

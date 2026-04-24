@@ -7,7 +7,7 @@
         "equalTo": "CONTRIBUTOR"
       },
       "displayContributorSeatType": {
-        "equalTo": "True"
+        "equalTo": "true"
       }
     },
     "headers": {
