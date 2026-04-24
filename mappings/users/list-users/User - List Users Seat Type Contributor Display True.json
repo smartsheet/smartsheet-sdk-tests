@@ -1,0 +1,56 @@
+{
+  "request": {
+    "urlPathPattern": "/2.0/users",
+    "method": "GET",
+    "queryParameters": {
+      "seatType": {
+        "equalTo": "CONTRIBUTOR"
+      },
+      "displayContributorSeatType": {
+        "equalTo": "True"
+      }
+    },
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/users/list-users/seat-type-contributor-display-true"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": 1234567890123458,
+          "admin": false,
+          "email": "contributor.filter@smartsheet.com",
+          "firstName": "Contributor",
+          "groupAdmin": false,
+          "isInternal": true,
+          "lastName": "Filter",
+          "licensedSheetCreator": false,
+          "name": "Contributor Filter",
+          "resourceViewer": false,
+          "seatType": "CONTRIBUTOR",
+          "seatTypeLastChangedAt": "2025-10-15T08:22:13.456789Z",
+          "sheetCount": 7,
+          "status": "ACTIVE"
+        }
+      ],
+      "pageNumber": 1,
+      "pageSize": 100,
+      "totalPages": 1,
+      "totalCount": 1
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

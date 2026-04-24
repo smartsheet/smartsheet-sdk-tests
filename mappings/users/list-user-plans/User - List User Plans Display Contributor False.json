@@ -1,0 +1,41 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/users/{userId}/plans",
+    "method": "GET",
+    "queryParameters": {
+      "displayContributorSeatType": {
+        "equalTo": "False"
+      }
+    },
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/users/list-user-plans/display-contributor-seat-type-false"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "lastKey": "12345678901234570",
+      "data": [
+        {
+          "planId": 1234567890123457,
+          "seatType": "VIEWER",
+          "seatTypeLastChangedAt": "2025-10-15T08:22:13.456789Z",
+          "provisionalExpirationDate": "2026-12-13T12:17:52.525696Z",
+          "isInternal": false
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
