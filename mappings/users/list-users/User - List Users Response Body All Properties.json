@@ -42,12 +42,36 @@
           "provisionalExpirationDate": "2026-12-13T12:17:52.525696Z",
           "sheetCount": -1,
           "status": "ACTIVE"
+        },
+        {
+          "id": 1234567890123457,
+          "admin": false,
+          "customWelcomeScreenViewed": "2020-08-25T12:15:47Z",
+          "email": "contributor.user@smartsheet.com",
+          "firstName": "Contributor",
+          "groupAdmin": false,
+          "isInternal": false,
+          "lastLogin": "2020-10-04T18:32:47Z",
+          "lastName": "User",
+          "licensedSheetCreator": false,
+          "name": "Contributor User",
+          "profileImage": {
+            "imageId": "u!1!nAtdn5RJB_o!k6_e_3h2R3w!wmYXPek-yVD",
+            "height": 1050,
+            "width": 1050
+          },
+          "resourceViewer": false,
+          "seatType": "CONTRIBUTOR",
+          "seatTypeLastChangedAt": "2025-01-01T00:00:00.123456789Z",
+          "provisionalExpirationDate": "2026-12-13T12:17:52.525696Z",
+          "sheetCount": -1,
+          "status": "ACTIVE"
         }
       ],
       "pageNumber": 1,
       "pageSize": 100,
       "totalPages": 1,
-      "totalCount": 1
+      "totalCount": 2
     },
     "headers": {
       "Content-Type": "application/json"
