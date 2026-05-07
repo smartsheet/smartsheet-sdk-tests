@@ -1,0 +1,49 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/events",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/events/list-events/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "pageNumber": 1,
+      "pageSize": 100,
+      "totalPages": 1,
+      "totalCount": 2,
+      "data": [
+        {
+          "eventId": "4b12345678901234",
+          "objectType": "SHEET",
+          "objectId": 1234567890123456,
+          "objectIdStr": "1234567890123456",
+          "userId": 12345678,
+          "eventTimestamp": "2024-05-06T10:30:00Z",
+          "action": "UPDATE",
+          "source": "WEB_APP"
+        },
+        {
+          "eventId": "4b12345678901235",
+          "objectType": "WORKSPACE",
+          "objectId": 9876543210987654,
+          "objectIdStr": "9876543210987654",
+          "userId": 12345679,
+          "eventTimestamp": "2024-05-06T09:15:00Z",
+          "action": "CREATE",
+          "source": "API_UNDEFINED_APP"
+        }
+      ]
+    }
+  }
+}
