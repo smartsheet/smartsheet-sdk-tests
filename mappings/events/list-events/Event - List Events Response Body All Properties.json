@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/events/list-events/all-response-body-properties"
+        "equalTo": "/events/list-events/required-response-body-properties-no-more-available"
       },
       "x-request-id": {
         "matches": ".*"
@@ -18,10 +18,7 @@
     "statusMessage": "OK",
     "status": 200,
     "jsonBody": {
-      "pageNumber": 1,
-      "pageSize": 100,
-      "totalPages": 1,
-      "totalCount": 2,
+      "moreAvailable": false,
       "data": [
         {
           "eventId": "4f12345678901234",
@@ -34,9 +31,7 @@
           "action": "UPDATE",
           "source": "WEB_APP",
           "additionalDetails": {
-            "columnName": "Task Name",
-            "oldValue": "Original Task",
-            "newValue": "Updated Task"
+            "emailAddress": "test@test.com"
           }
         },
         {
@@ -50,7 +45,51 @@
           "action": "CREATE",
           "source": "API_UNDEFINED_APP",
           "additionalDetails": {
-            "workspaceName": "New Project Workspace"
+            "emailAddress": "test@test.com"
+          }
+        },
+        {
+          "eventId": "2.1.Y-oF8RMroSCo4WLS9p78QEz-LXxxxyyyjnXA2hFnCN_w",
+          "objectType": "SHEET",
+          "action": "PURGE",
+          "objectId": 3573510329814916,
+          "objectIdStr": "3573510329814916",
+          "eventTimestamp": "2024-05-06T09:09:33Z",
+          "userId": 12345678,
+          "requestUserId": 12345678,
+          "source": "UNKNOWN",
+          "additionalDetails": {
+              "emailAddress": "test@test.com"
+          }
+        },
+        {
+          "eventId": "2.1.SuwpcrfUcr75nP591Hce4_zQxxxyyy_0CDfvRRx6V0",
+          "objectType": "ATTACHMENT",
+          "action": "CREATE",
+          "objectId": 4230707048648580,
+          "objectIdStr": "4230707048648580",
+          "eventTimestamp": "2024-05-06T10:30:00Z",
+          "userId": 12345678,
+          "requestUserId": 12345678,
+          "source": "UNKNOWN",
+          "additionalDetails": {
+              "emailAddress": "test@test.com",
+              "sheetId": "102030405",
+              "attachmentName": "picture.jpg"
+          }
+        },
+        {
+          "eventId": "2.1.ifR6WlBin9DQVYHDkQEx1D3EAxxxyyyXtcLWa9Oio",
+          "objectType": "SHEET",
+          "action": "LOAD",
+          "objectId": 8462951303303044,
+          "objectIdStr": "8462951303303044",
+          "eventTimestamp": "2024-05-06T10:35:15Z",
+          "userId": 8737233684457348,
+          "requestUserId": 8737233684457348,
+          "source": "API_INTEGRATED_APP",
+          "additionalDetails": {
+              "emailAddress": "test@test.com"
           }
         }
       ]
