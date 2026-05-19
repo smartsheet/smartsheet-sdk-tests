@@ -1,13 +1,13 @@
 {
   "request": {
-    "urlPathTemplate": "/2.0/reports/{reportId}/columns",
+    "urlPathTemplate": "/2.0/reports/{reportId}/scope",
     "method": "GET",
     "headers": {
       "Authorization": {
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/reports/get-report-columns/required-response-body-properties"
+        "equalTo": "/reports/list-report-scope/required-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -20,15 +20,8 @@
     "jsonBody": {
       "data": [
         {
-          "index": 0,
-          "title": "Task Name",
-          "type": "TEXT_NUMBER",
-          "primary": true
-        },
-        {
-          "index": 1,
-          "type": "DATETIME",
-          "systemColumnType": "CREATED_DATE"
+          "assetType": "sheet",
+          "assetId": 2331373580117892
         }
       ]
     },

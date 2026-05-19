@@ -1,13 +1,13 @@
 {
   "request": {
-    "urlPathTemplate": "/2.0/reports/{reportId}/scope",
+    "urlPathTemplate": "/2.0/reports/{reportId}/columns",
     "method": "GET",
     "headers": {
       "Authorization": {
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/reports/get-report-scope/all-response-body-properties"
+        "equalTo": "/reports/list-report-columns/required-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -20,20 +20,17 @@
     "jsonBody": {
       "data": [
         {
-          "assetType": "sheet",
-          "assetId": 2331373580117892
+          "index": 0,
+          "title": "Task Name",
+          "type": "TEXT_NUMBER",
+          "primary": true
         },
         {
-          "assetType": "workspace",
-          "assetId": 7879278542455688
-        },
-        {
-          "assetType": "sheet",
-          "assetId": 1234567890123456
+          "index": 1,
+          "type": "DATETIME",
+          "systemColumnType": "CREATED_DATE"
         }
-      ],
-      "lastKey": null,
-      "hasMore": false
+      ]
     },
     "headers": {
       "Content-Type": "application/json"

@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/reports/get-report-columns/all-response-body-properties"
+        "equalTo": "/reports/list-report-columns/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -69,8 +69,7 @@
           "version": 0
         }
       ],
-      "lastKey": null,
-      "hasMore": false
+      "lastKey": null
     },
     "headers": {
       "Content-Type": "application/json"

@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/reports/get-report-scope/required-response-body-properties"
+        "equalTo": "/reports/list-report-scope/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -22,8 +22,17 @@
         {
           "assetType": "sheet",
           "assetId": 2331373580117892
+        },
+        {
+          "assetType": "workspace",
+          "assetId": 7879278542455688
+        },
+        {
+          "assetType": "sheet",
+          "assetId": 1234567890123456
         }
-      ]
+      ],
+      "lastKey": null
     },
     "headers": {
       "Content-Type": "application/json"
