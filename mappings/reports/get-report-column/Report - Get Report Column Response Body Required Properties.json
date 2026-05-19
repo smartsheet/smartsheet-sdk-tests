@@ -1,0 +1,30 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}/columns/{columnVirtualId}",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/get-report-column/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "index": 0,
+      "title": "Task Name",
+      "type": "TEXT_NUMBER",
+      "primary": true
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

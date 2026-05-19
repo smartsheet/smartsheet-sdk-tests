@@ -1,0 +1,105 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}/definition",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/get-report-definition/all-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "filters": {
+        "operator": "AND",
+        "criteria": [
+          {
+            "column": {
+              "title": "Primary Column",
+              "type": "TEXT_NUMBER",
+              "primary": true
+            },
+            "operator": "EQUAL",
+            "values": [
+              "Test Value"
+            ]
+          },
+          {
+            "column": {
+              "title": "Status",
+              "type": "PICKLIST"
+            },
+            "operator": "NOT_EQUAL",
+            "values": [
+              "Complete"
+            ]
+          }
+        ]
+      },
+      "groupingCriteria": [
+        {
+          "column": {
+            "title": "Primary Column",
+            "type": "TEXT_NUMBER",
+            "primary": true
+          },
+          "sortingDirection": "ASCENDING",
+          "isExpanded": true
+        },
+        {
+          "column": {
+            "title": "Category",
+            "type": "TEXT_NUMBER"
+          },
+          "sortingDirection": "DESCENDING",
+          "isExpanded": false
+        }
+      ],
+      "summarizingCriteria": [
+        {
+          "column": {
+            "title": "Primary Column",
+            "type": "TEXT_NUMBER",
+            "primary": true
+          },
+          "aggregationType": "COUNT"
+        },
+        {
+          "column": {
+            "title": "Amount",
+            "type": "TEXT_NUMBER"
+          },
+          "aggregationType": "SUM"
+        }
+      ],
+      "sortingCriteria": [
+        {
+          "column": {
+            "title": "Primary Column",
+            "type": "TEXT_NUMBER",
+            "primary": true
+          },
+          "sortingDirection": "ASCENDING"
+        },
+        {
+          "column": {
+            "type": "DATETIME",
+            "systemColumnType": "MODIFIED_DATE"
+          },
+          "sortingDirection": "DESCENDING"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

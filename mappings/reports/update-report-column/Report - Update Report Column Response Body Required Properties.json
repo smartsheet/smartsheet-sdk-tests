@@ -1,0 +1,34 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}/columns/{columnVirtualId}",
+    "method": "PUT",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/update-report-column/required-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "message": "SUCCESS",
+      "resultCode": 0,
+      "result": {
+        "index": 1,
+        "title": "Updated Column",
+        "type": "TEXT_NUMBER",
+        "primary": true
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
