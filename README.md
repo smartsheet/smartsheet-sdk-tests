@@ -24,3 +24,5 @@ This will start a container with a WireMock server on [http://localhost:8082](ht
 ## Contributing
 
 We welcome contributions! Before submitting code changes, please review our contribution guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+> **_TIP:_**  You can make use of integrated [Claude Code skills](.claude/skills/) to generate Wiremock mappings.

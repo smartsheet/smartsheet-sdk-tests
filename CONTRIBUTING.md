@@ -30,7 +30,6 @@ Wiremock tests should not cover:
 
 ## Do you want to create mock mappings for endpoints?
 
-> **_TIP:_**  You can make use of Roo Code or Claude Code to generate Wiremock mappings.
 > Example prompt: "Create WireMock mappings for the workspaces API group"
 
 ### Using Smartsheet's Public API Documentation
