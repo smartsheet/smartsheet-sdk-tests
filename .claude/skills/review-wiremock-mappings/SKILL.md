@@ -200,6 +200,27 @@ Check each mapping file for:
 - ✅ `mappings/{group}/{endpoint-name}/`
 - ✅ File naming: `{Group} - {Operation} {Case}.json`
 
+**Endpoint naming verification (CRITICAL):**
+
+The `{endpoint-name}` MUST follow REST conventions based on **path structure**, NOT the OpenAPI summary field:
+
+| Path Pattern | HTTP Method | Correct Name | Common Wrong Name |
+|--------------|-------------|--------------|-------------------|
+| `/{resource}` | GET | `list-{resource}` | ❌ `get-{resource}` |
+| `/{resource}/{id}` | GET | `get-{resource}` | - |
+| `/{resource}` | POST | `create-{resource}` | ❌ `add-{resource}` |
+| `/{resource}/{id}` | PUT | `update-{resource}` | - |
+| `/{resource}/{id}` | DELETE | `delete-{resource}` | - |
+| `/{parent}/{id}/{children}` | GET | `list-{parent}-{children}` | ❌ `get-{parent}-{children}` |
+| `/{parent}/{id}/{children}` | POST | `create-{parent}-{children}` | ❌ `add-{parent}-{children}` |
+| `/{parent}/{id}/{children}/{childId}` | GET | `get-{parent}-{child}` | - |
+| `/{parent}/{id}/{children}/{childId}` | PUT | `update-{parent}-{child}` | - |
+| `/{parent}/{id}/{children}/{childId}` | DELETE | `delete-{parent}-{child}` | - |
+
+**Rule:** ID in final path segment = get/update/delete (singular), no ID = list/create (plural)
+
+**BLOCKING if:** Directory named based on misleading summary instead of path structure
+
 **Test case coverage:**
 - ✅ GET/DELETE endpoints have both:
   - `all-response-body-properties`
@@ -234,6 +255,7 @@ All checks pass:
 ### REQUEST CHANGES (BLOCKING) 🚫
 Critical issues found:
 - Mappings for deprecated endpoints present
+- Endpoint named based on summary instead of path structure
 - Schema doesn't match OpenAPI spec
 - Fictional properties added
 - Required conventions violated
@@ -255,6 +277,8 @@ No changes needed, but note:
 
 | Mistake | Fix |
 |---------|-----|
+| Not verifying endpoint naming against path structure | Check: ID in final segment = get/update/delete, no ID = list/create |
+| Approving "get-X" naming for collection endpoints | `/parent/{id}/children` GET must be "list", never "get" |
 | "Looks good to me" rubber stamp | Always verify against OpenAPI spec |
 | Skipping deprecation check | Check deprecation FIRST - blocking issue |
 | Not discovering all endpoints in group | Use tag-based discovery to verify coverage |
@@ -266,11 +290,14 @@ No changes needed, but note:
 ## Red Flags - STOP and Investigate
 
 Stop and dig deeper if you see:
+- Directory named "get-X" when path has no ID in final segment (should be "list-X")
+- Directory named "add-X" instead of "create-X"
 - Properties that "seem reasonable" but aren't in your spec query
 - Endpoints you didn't find in tag-based discovery
 - Schema mismatches explained as "close enough"
 - Missing test cases explained as "not needed"
 - Deprecation check skipped because "they wouldn't include those"
+- Endpoint naming that matches summary but not path structure
 
 **All of these require verification, not assumption.**
 
@@ -278,6 +305,11 @@ Stop and dig deeper if you see:
 
 ```markdown
 ## WireMock Mappings Review: {endpoint-group}
+
+### Endpoint Naming Verification ✅/🚫
+- [ ] Verified endpoint names follow path structure rules (not summary)
+- [ ] Checked: ID in final segment = get/update/delete, no ID = list/create
+- [ ] Issues found: {list or "none"}
 
 ### Deprecation Check ✅/🚫
 - [ ] Checked for deprecated endpoints in OpenAPI spec

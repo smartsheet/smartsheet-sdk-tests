@@ -171,6 +171,36 @@ For each endpoint, create mappings following CONTRIBUTING.md conventions:
 - Files: One per test case
 - Naming: `{Group} - {Operation} {Case}.json`
 
+**CRITICAL: Endpoint Naming Rules (Based on Path Structure)**
+
+The `{endpoint-name}` MUST follow REST conventions based on path structure, NOT the OpenAPI summary field:
+
+| Path Pattern | HTTP Method | Naming Rule | Example |
+|--------------|-------------|-------------|---------|
+| `/{resource}` | GET | `list-{resource}` | `/reports` → `list-reports` |
+| `/{resource}/{id}` | GET | `get-{resource}` | `/reports/{reportId}` → `get-report` |
+| `/{parent}/{id}/{children}` | GET | `list-{parent}-{children}` | `/reports/{reportId}/columns` → `list-report-columns` |
+| `/{parent}/{id}/{children}/{childId}` | GET | `get-{parent}-{child}` | `/reports/{reportId}/columns/{columnId}` → `get-report-column` |
+| `/{resource}` | POST | `create-{resource}` | `/reports` → `create-report` |
+| `/{parent}/{id}/{children}` | POST | `create-{parent}-{children}` | `/reports/{reportId}/columns` → `create-report-columns` |
+| `/{resource}/{id}` | PUT | `update-{resource}` | `/reports/{reportId}` → `update-report` |
+| `/{parent}/{id}/{children}/{childId}` | PUT | `update-{parent}-{child}` | `/reports/{reportId}/columns/{columnId}` → `update-report-column` |
+| `/{resource}/{id}` | DELETE | `delete-{resource}` | `/reports/{reportId}` → `delete-report` |
+| `/{parent}/{id}/{children}/{childId}` | DELETE | `delete-{parent}-{child}` | `/reports/{reportId}/columns/{columnId}` → `delete-report-column` |
+
+**Why path structure, not summary?**
+- OpenAPI summary fields can be incorrect or inconsistent
+- Path structure is authoritative: ID in final segment = single resource operation
+- REST convention: Collection endpoints (no ID) return lists, resource endpoints (with ID) return single items
+
+**WRONG Examples (trusting misleading summary):**
+- ❌ Summary says "Get report columns" → naming it `get-report-columns`
+  - Path is `/reports/{reportId}/columns` (no column ID) → Should be `list-report-columns`
+
+**CORRECT Examples (using path structure):**
+- ✅ `/reports/{reportId}/columns` GET → `list-report-columns` (collection endpoint)
+- ✅ `/reports/{reportId}/columns/{columnId}` GET → `get-report-column` (single resource endpoint)
+
 **Standard test cases for GET/DELETE:**
 1. `all-response-body-properties` - All properties from schema
 2. `required-response-body-properties` - Only required properties
@@ -213,6 +243,8 @@ Before completing, verify using the [creation checklist](./checklist.md):
 
 | Mistake | Fix |
 |---------|-----|
+| Naming based on OpenAPI summary instead of path structure | Use path structure rules: ID in final segment = get/update/delete, no ID = list/create |
+| Trusting "Get X" summary for collection endpoints | `/parent/{id}/children` GET is always "list", never "get" |
 | Guessing API schema properties | Always derive from OpenAPI spec |
 | Creating mappings for single endpoint when tag has multiple | Use tag-based discovery to find all endpoints |
 | Skipping deprecation check | Always check before creating mappings |
@@ -224,12 +256,14 @@ Before completing, verify using the [creation checklist](./checklist.md):
 ## Red Flags - STOP and Verify
 
 Stop if you find yourself:
+- "The summary says 'Get X' so I'll name it get-x" (Check path structure first!)
 - "I'll create basic mappings with common properties"
 - "Without the spec, I cannot... but I'll proceed anyway"
 - "This seems like a reasonable schema"
 - Creating mappings before checking for deprecated endpoints
 - Assuming only one endpoint exists in the group
 - Using remote spec when local file was provided
+- Naming endpoint without analyzing path structure for IDs
 
 **All of these mean:** Go back to the workflow. Follow it systematically.
 
