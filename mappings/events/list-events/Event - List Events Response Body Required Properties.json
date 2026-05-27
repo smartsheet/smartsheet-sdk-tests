@@ -17,6 +17,9 @@
   "response": {
     "statusMessage": "OK",
     "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
     "jsonBody": {
       "moreAvailable": true,
       "nextStreamPosition": "2.1.Y-oF8RMroSCo4WLS9p78QEz-LXzzzzzzjnXA2hFnCN_w",

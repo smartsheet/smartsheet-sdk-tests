@@ -17,6 +17,9 @@
   "response": {
     "statusMessage": "OK",
     "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
     "jsonBody": {
       "moreAvailable": false,
       "data": [
