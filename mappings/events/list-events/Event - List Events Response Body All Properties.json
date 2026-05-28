@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/events/list-events/required-response-body-properties-no-more-available"
+        "equalTo": "/events/list-events/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -21,7 +21,8 @@
       "Content-Type": "application/json"
     },
     "jsonBody": {
-      "moreAvailable": false,
+      "moreAvailable": true,
+      "nextStreamPosition": "2.1.Y-oF8RMroSCo4WLS9p78QEz-LXzzzzzzjnXA2hFnCN_w",
       "data": [
         {
           "eventId": "4f12345678901234",
@@ -62,7 +63,7 @@
           "requestUserId": 12345678,
           "source": "UNKNOWN",
           "additionalDetails": {
-              "emailAddress": "test@test.com"
+            "emailAddress": "test@test.com"
           }
         },
         {
@@ -76,9 +77,9 @@
           "requestUserId": 12345678,
           "source": "UNKNOWN",
           "additionalDetails": {
-              "emailAddress": "test@test.com",
-              "sheetId": "102030405",
-              "attachmentName": "picture.jpg"
+            "emailAddress": "test@test.com",
+            "sheetId": "102030405",
+            "attachmentName": "picture.jpg"
           }
         },
         {
@@ -92,7 +93,7 @@
           "requestUserId": 8737233684457348,
           "source": "API_INTEGRATED_APP",
           "additionalDetails": {
-              "emailAddress": "test@test.com"
+            "emailAddress": "test@test.com"
           }
         }
       ]

@@ -7,7 +7,7 @@
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/events/list-events/required-response-body-properties-with-more-available"
+        "equalTo": "/events/list-events/required-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -21,80 +21,57 @@
       "Content-Type": "application/json"
     },
     "jsonBody": {
-      "moreAvailable": true,
-      "nextStreamPosition": "2.1.Y-oF8RMroSCo4WLS9p78QEz-LXzzzzzzjnXA2hFnCN_w",
+      "moreAvailable": false,
       "data": [
         {
           "eventId": "4f12345678901234",
           "objectType": "SHEET",
           "objectId": 1234567890123456,
-          "objectIdStr": "1234567890123456",
           "userId": 12345678,
           "requestUserId": 12345678,
           "eventTimestamp": "2024-05-06T10:30:00Z",
           "action": "UPDATE",
-          "source": "WEB_APP",
-          "additionalDetails": {
-            "emailAddress": "test@test.com"
-          }
+          "source": "WEB_APP"
         },
         {
           "eventId": "4f12345678901235",
           "objectType": "WORKSPACE",
           "objectId": 9876543210987654,
-          "objectIdStr": "9876543210987654",
           "userId": 12345679,
           "requestUserId": 12345679,
           "eventTimestamp": "2024-05-06T09:15:00Z",
           "action": "CREATE",
-          "source": "API_UNDEFINED_APP",
-          "additionalDetails": {
-            "emailAddress": "test@test.com"
-          }
+          "source": "API_UNDEFINED_APP"
         },
         {
           "eventId": "2.1.Y-oF8RMroSCo4WLS9p78QEz-LXxxxyyyjnXA2hFnCN_w",
           "objectType": "SHEET",
           "action": "PURGE",
           "objectId": 3573510329814916,
-          "objectIdStr": "3573510329814916",
           "eventTimestamp": "2024-05-06T09:09:33Z",
           "userId": 12345678,
           "requestUserId": 12345678,
-          "source": "UNKNOWN",
-          "additionalDetails": {
-              "emailAddress": "test@test.com"
-          }
+          "source": "UNKNOWN"
         },
         {
           "eventId": "2.1.SuwpcrfUcr75nP591Hce4_zQxxxyyy_0CDfvRRx6V0",
           "objectType": "ATTACHMENT",
           "action": "CREATE",
           "objectId": 4230707048648580,
-          "objectIdStr": "4230707048648580",
           "eventTimestamp": "2024-05-06T10:30:00Z",
           "userId": 12345678,
           "requestUserId": 12345678,
-          "source": "UNKNOWN",
-          "additionalDetails": {
-              "emailAddress": "test@test.com",
-              "sheetId": "102030405",
-              "attachmentName": "picture.jpg"
-          }
+          "source": "UNKNOWN"
         },
         {
           "eventId": "2.1.ifR6WlBin9DQVYHDkQEx1D3EAxxxyyyXtcLWa9Oio",
           "objectType": "SHEET",
           "action": "LOAD",
           "objectId": 8462951303303044,
-          "objectIdStr": "8462951303303044",
           "eventTimestamp": "2024-05-06T10:35:15Z",
           "userId": 8737233684457348,
           "requestUserId": 8737233684457348,
-          "source": "API_INTEGRATED_APP",
-          "additionalDetails": {
-              "emailAddress": "test@test.com"
-          }
+          "source": "API_INTEGRATED_APP"
         }
       ]
     }
