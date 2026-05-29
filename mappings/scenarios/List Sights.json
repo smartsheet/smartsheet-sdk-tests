@@ -12,10 +12,7 @@
     "statusMessage": "OK",
     "status": 200,
     "jsonBody": {
-      "pageNumber": 1,
-      "pageSize": 100,
-      "totalPages": 1,
-      "totalCount": 6,
+      "lastKey": "abcDefGhIjKlMnOpQrStUvWxYz",
       "data": [
         {
           "id": 52,
