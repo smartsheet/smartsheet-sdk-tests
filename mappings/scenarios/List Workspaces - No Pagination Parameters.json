@@ -12,10 +12,6 @@
     "statusMessage": "OK",
     "status": 200,
     "jsonBody": {
-      "pageNumber": 1,
-      "pageSize": 5,
-      "totalPages": 1,
-      "totalCount": 5,
       "data": [
         {
           "id": 1001,

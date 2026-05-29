@@ -8,9 +8,6 @@
       }
     },
     "queryParameters": {
-      "paginationType": {
-        "equalTo": "token"
-      },
       "lastKey": {
         "equalTo": "eyJsYXN0SWQiOjEwMDJ9"
       },
@@ -37,7 +34,7 @@
           "permalink": "https://app.smartsheet.com/workspaces/1004"
         }
       ],
-      "lastKey": "eyJsYXN0SWQiOjEwMDJ9"
+      "lastKey": "eyJsYXN0SWQiOjEwMDR9"
     },
     "headers": {
       "Content-Type": "application/json;charset=UTF-8"

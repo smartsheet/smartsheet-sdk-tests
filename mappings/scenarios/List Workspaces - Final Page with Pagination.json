@@ -8,9 +8,6 @@
       }
     },
     "queryParameters": {
-      "paginationType": {
-        "equalTo": "token"
-      },
       "lastKey": {
         "equalTo": "eyJsYXN0SWQiOjEwMDR9"
       },
