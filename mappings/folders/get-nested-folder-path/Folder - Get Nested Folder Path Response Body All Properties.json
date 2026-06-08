@@ -1,13 +1,13 @@
 {
   "request": {
-    "urlPathTemplate": "/2.0/sheets/{sheetId}/path",
+    "urlPathTemplate": "/2.0/folders/{folderId}/path",
     "method": "GET",
     "headers": {
       "Authorization": {
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/sheets/get-sheet-path/all-response-body-properties"
+        "equalTo": "/folders/get-nested-folder-path/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -32,12 +32,11 @@
               "id": 2345678901234567,
               "name": "Project Plans Subfolder",
               "permalink": "https://app.smartsheet.com/folders/2345678901234567",
-              "sheets": [
+              "folders": [
                 {
                   "id": 3456789012345678,
-                  "name": "Project Plan",
-                  "permalink": "https://app.smartsheet.com/sheets/3456789012345678",
-                  "accessLevel": "ADMIN"
+                  "name": "Project Plans Sub-Subfolder",
+                  "permalink": "https://app.smartsheet.com/folders/3456789012345678"
                 }
               ]
             }

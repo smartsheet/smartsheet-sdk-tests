@@ -1,13 +1,13 @@
 {
   "request": {
-    "urlPathTemplate": "/2.0/folders/{folderId}/path",
+    "urlPathTemplate": "/2.0/sights/{sightId}/path",
     "method": "GET",
     "headers": {
       "Authorization": {
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/folders/get-folder-path/root-level-response-body-properties"
+        "equalTo": "/sights/get-root-sight-path/all-response-body-properties"
       },
       "x-request-id": {
         "matches": ".*"
@@ -22,11 +22,12 @@
       "name": "Sample Workspace",
       "permalink": "https://api.smartsheet.com/workspaces/cpG82pf5v8FPrgFfJrFcrM56xCHVGhmV4P4xcQ71",
       "accessLevel": "OWNER",
-      "folders": [
+      "sights": [
         {
           "id": 5678901234567890,
-          "name": "Root Level Folder",
-          "permalink": "https://app.smartsheet.com/folders/rootlevel"
+          "name": "Root Level Dashboard",
+          "permalink": "https://app.smartsheet.com/dashboards/rootlevel",
+          "accessLevel": "ADMIN"
         }
       ]
     },
