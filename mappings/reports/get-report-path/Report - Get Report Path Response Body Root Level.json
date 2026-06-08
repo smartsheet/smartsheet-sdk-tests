@@ -1,0 +1,38 @@
+{
+  "request": {
+    "urlPathTemplate": "/2.0/reports/{reportId}/path",
+    "method": "GET",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/reports/get-report-path/root-level-response-body-properties"
+      },
+      "x-request-id": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "OK",
+    "status": 200,
+    "jsonBody": {
+      "id": 4509918431602564,
+      "name": "Sample Workspace",
+      "permalink": "https://api.smartsheet.com/workspaces/cpG82pf5v8FPrgFfJrFcrM56xCHVGhmV4P4xcQ71",
+      "accessLevel": "OWNER",
+      "reports": [
+        {
+          "id": 5678901234567890,
+          "name": "Root Level Report",
+          "permalink": "https://app.smartsheet.com/reports/rootlevel",
+          "accessLevel": "ADMIN"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
