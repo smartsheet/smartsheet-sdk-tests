@@ -18,7 +18,7 @@
     "statusMessage": "OK",
     "status": 200,
     "jsonBody": {
-        "id": 4509918431602564,
+      "id": 4509918431602564,
       "name": "Sample Workspace",
       "permalink": "https://api.smartsheet.com/workspaces/cpG82pf5v8FPrgFfJrFcrM56xCHVGhmV4P4xcQ71",
       "accessLevel": "OWNER"
