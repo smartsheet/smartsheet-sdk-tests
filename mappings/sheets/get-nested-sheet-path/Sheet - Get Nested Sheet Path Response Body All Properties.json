@@ -37,7 +37,9 @@
                   "id": 3456789012345678,
                   "name": "Project Plan",
                   "permalink": "https://app.smartsheet.com/sheets/3456789012345678",
-                  "accessLevel": "ADMIN"
+                  "accessLevel": "ADMIN",
+                  "createdAt": "2024-01-01T00:00:00Z",
+                  "modifiedAt": "2024-06-01T00:00:00Z"
                 }
               ]
             }

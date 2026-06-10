@@ -27,7 +27,9 @@
           "id": 5678901234567890,
           "name": "Root Level Report",
           "permalink": "https://app.smartsheet.com/reports/rootlevel",
-          "accessLevel": "ADMIN"
+          "accessLevel": "ADMIN",
+          "createdAt": "2024-01-01T00:00:00Z",
+          "modifiedAt": "2024-06-01T00:00:00Z"
         }
       ]
     },
