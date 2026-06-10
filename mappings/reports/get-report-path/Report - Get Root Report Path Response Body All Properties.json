@@ -20,7 +20,7 @@
     "jsonBody": {
       "id": 4509918431602564,
       "name": "Sample Workspace",
-      "permalink": "https://api.smartsheet.com/workspaces/mock_workspace_id",
+      "permalink": "https://app.smartsheet.com/workspaces/mock_workspace_id",
       "accessLevel": "OWNER",
       "reports": [
         {
