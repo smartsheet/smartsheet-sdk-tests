@@ -22,6 +22,7 @@
       "data": [
         {
           "planId": 1234567890123456,
+          "planName": "Acme Corporation",
           "seatType": "MEMBER",
           "seatTypeLastChangedAt": "2025-01-01T00:00:00.123456789Z",
           "provisionalExpirationDate": "2026-12-13T12:17:52.525696Z",
