@@ -12,15 +12,15 @@
     "statusMessage": "OK",
     "status": 200,
     "jsonBody": {
-      "orgId": 1244212,
-      "planId": 41878788,
+      "orgId": 1556806293055364,
+      "planId": 1148023251199876,
       "isDisabled": false,
       "allowManualChange": true,
       "labels": [
         {
           "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
           "name": "Confidential",
-          "color": "#FFE0E3",
+          "color": "#ffe0e3",
           "sensitivityOrder": 1,
           "isDefault": false
         }
@@ -30,11 +30,11 @@
         "approvers": [
           {
             "type": "GROUPS",
-            "ids": [5001, 5002]
+            "ids": [5129226945881988, 2877427132196740]
           },
           {
             "type": "USERS",
-            "ids": [7001]
+            "ids": [5448085317937028]
           }
         ]
       }

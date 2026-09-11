@@ -12,8 +12,8 @@
     "statusMessage": "OK",
     "status": 200,
     "jsonBody": {
-      "orgId": 1244212,
-      "planId": 41878788,
+      "orgId": 1556806293055364,
+      "planId": 1148023251199876,
       "isDisabled": false,
       "guidelinesUrl": "https://wiki.example.com/classification-guide",
       "allowManualChange": true,
@@ -22,7 +22,7 @@
           "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
           "name": "Confidential",
           "description": "Highly sensitive information",
-          "color": "#FFE0E3",
+          "color": "#ffe0e3",
           "sensitivityOrder": 1,
           "isDefault": false
         },
@@ -30,7 +30,7 @@
           "id": "4aa85f64-5717-4562-b3fc-2c963f66afa7",
           "name": "Internal",
           "description": "For internal use only",
-          "color": "#E0F0FF",
+          "color": "#b9f4c3",
           "sensitivityOrder": 2,
           "isDefault": true
         }
@@ -43,7 +43,7 @@
             "approvers": [
               {
                 "type": "USERS",
-                "ids": [7001]
+                "ids": [5448085317937028]
               },
               {
                 "type": "WORKSPACE_ADMINS",
