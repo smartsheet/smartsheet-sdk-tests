@@ -1,13 +1,13 @@
 {
   "request": {
-    "urlPathTemplate": "/2.0/sheets/{sheetId}/dataclassification",
-    "method": "DELETE",
+    "urlPathTemplate": "/2.0/sheets/{sheetId}",
+    "method": "GET",
     "headers": {
       "Authorization": {
         "matches": "Bearer .*"
       },
       "x-test-name": {
-        "equalTo": "/sheets/delete-data-classification/all-response-body-properties"
+        "equalTo": "/sheets/get-sheet/data-classification"
       },
       "x-request-id": {
         "matches": ".*"
@@ -18,8 +18,9 @@
     "statusMessage": "OK",
     "status": 200,
     "jsonBody": {
-      "message": "SUCCESS",
-      "resultCode": 0
+      "id": 8244643726616452,
+      "name": "Test Sheet",
+      "dataClassification": "Confidential"
     },
     "headers": {
       "Content-Type": "application/json"
