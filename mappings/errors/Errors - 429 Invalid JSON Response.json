@@ -1,0 +1,24 @@
+{
+  "request": {
+    "urlPathPattern": ".*",
+    "headers": {
+      "Authorization": {
+        "matches": "Bearer .*"
+      },
+      "x-test-name": {
+        "equalTo": "/errors/429-invalid-json-response"
+      },
+      "x-request-id": {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "statusMessage": "Too Many Requests",
+    "status": 429,
+    "body": "Too Many Requests",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
