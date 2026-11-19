@@ -23,10 +23,7 @@
           "sensitivityOrder": 1,
           "isDefault": false
         }
-      ],
-      "downgradeApprovalSettings": {
-        "mode": "NONE"
-      }
+      ]
     },
     "headers": { "Content-Type": "application/json" }
   }
